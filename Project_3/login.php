@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-if (!empty($_SESSION['user_logged_in'])) {
+if (!empty($_SESSION['admin_logged_in'])) {
     header('Location: orders.php');
     exit;
 }
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $statusClass = 'error';
     } else {
         $connection = getDbConnection();
-        $sql = 'SELECT id, username, password FROM users WHERE username = ? LIMIT 1';
+        $sql = 'SELECT id, username, password FROM admins WHERE username = ? LIMIT 1';
         $stmt = mysqli_prepare($connection, $sql);
 
         if ($stmt) {
@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             mysqli_stmt_close($stmt);
 
             if ($user && $password === $user['password']) {
-                $_SESSION['user_logged_in'] = true;
-                $_SESSION['user_username'] = $user['username'];
+                $_SESSION['admin_logged_in'] = true;
+                $_SESSION['admin_username'] = $user['username'];
                 header('Location: orders.php');
                 exit;
             }
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'header.php';
 ?>
 <section class="container section-block">
-    <h1 class="section-title">User Login</h1>
+    <h1 class="section-title">Admin Login</h1>
     <div class="panel login-panel">
         <p class="section-subtitle">Login to view customer order information.</p>
         <form action="login.php" method="post" class="form-grid-large">

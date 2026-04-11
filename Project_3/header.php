@@ -35,7 +35,7 @@ if (!isset($activePage)) {
                 <a class="nav-link <?php echo $activePage === 'order' ? 'active' : ''; ?>" href="order.php">Order</a>
                 <a class="nav-link <?php echo $activePage === 'gallery' ? 'active' : ''; ?>" href="gallery.php">Gallery</a>
                 <a class="nav-link <?php echo $activePage === 'contact' ? 'active' : ''; ?>" href="contact.php">Contact Us</a>
-                <?php if (!empty($_SESSION['user_logged_in'])): ?>
+                <?php if (!empty($_SESSION['admin_logged_in'])): ?>
                     <a class="nav-link <?php echo $activePage === 'orders' ? 'active' : ''; ?>" href="orders.php">Customer Orders</a>
                     <a class="nav-link" href="logout.php">Logout</a>
                 <?php else: ?>

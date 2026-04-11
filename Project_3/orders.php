@@ -12,7 +12,7 @@ include 'header.php';
 ?>
 <section class="container section-block">
     <h1 class="section-title">Customer Order Information</h1>
-    <p class="section-subtitle">Logged in as <?php echo htmlspecialchars($_SESSION['user_username']); ?>.</p>
+    <p class="section-subtitle">Logged in as <?php echo htmlspecialchars($_SESSION['admin_username']); ?>.</p>
 
     <div class="table-wrap">
         <table class="menu-table">
