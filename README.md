@@ -151,27 +151,56 @@ Then open:
 
 ### Project 1
 
+Static website interface showing page layout and CSS-based structure.
+
 ![Project 1](screenshoots/Project_1.png)
 
 ### Project 2
 
+Student registration form UI for collecting academic records.
+
 ![Project 2 Form](screenshoots/Project_2_Form.png)
+
+Database table output confirming registered student records are stored correctly.
+
 ![Project 2 Registration Table](screenshoots/Project_2_TRegistration_Table.png)
 
 ### Project 3
 
+Home page of the hotel website (part of the required minimum 6 pages).
+
 ![Project 3 Home](screenshoots/Project_3_Home.png)
+
+Menu page using an HTML table to present food and drink items.
+
 ![Project 3 Menu](screenshoots/Project_3_Menu.png)
+
+Gallery page with food and drink images linked to the order page.
+
 ![Project 3 Gallery](screenshoots/Project_3_Gallery.png)
+
+Order form page that sends customer order details to the database using PHP.
+
 ![Project 3 Order](screenshoots/Project_3_Order.png)
+
+Login form used to authenticate the user before viewing stored order information.
+
 ![Project 3 Login Form](screenshoots/Project_3_Login_Form.png)
+
+Admin dashboard after successful login, including protected navigation and logout access.
+
 ![Project 3 Admin Panel](screenshoots/Project_3_AdminPanel.png)
+
+Orders table page displaying customer order data retrieved from the database.
+
 ![Project 3 Orders Table](screenshoots/Projecy_3_Orders_Table.png)
 
 ### Project 4
+
+Currency converter interface with amount input, currency type selector, exchange rate field, and converted amount output.
 
 ![Project 4 Currency Converter](screenshoots/Project_4.png)
 
 ## Author
 
-IRANZI CLAUDE
+IRANZI CLAUDE 223005124
