@@ -1,0 +1,406 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  color: #222;
+}
+
+
+.form-wrapper {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 30px 40px;
+  max-width: 820px;
+  margin: 0 auto 40px auto;
+}
+
+
+.form-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.form-row label {
+  width: 170px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding-top: 5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.form-row .field {
+  flex: 1;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="tel"] {
+  width: 200px;
+  height: 24px;
+  border: 1px solid #999;
+  padding: 2px 4px;
+  font-size: 13px;
+}
+
+.form-row .field > select {
+  width: 200px;
+  height: 26px;
+  border: 1px solid #999;
+  padding: 2px 4px;
+  font-size: 13px;
+}
+
+.form-row textarea {
+  width: 260px;
+  height: 60px;
+  border: 1px solid #999;
+  padding: 4px;
+  font-size: 13px;
+  resize: vertical;
+}
+
+.dob-group {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.dob-group select {
+  height: 26px;
+  border: 1px solid #999;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+.gender-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.gender-group label {
+  width: auto;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hobbies-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 3px;
+}
+
+.hobbies-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hobbies-group label {
+  width: auto;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-top: 0;
+}
+
+.others-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.others-row label {
+  width: auto;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  padding-top: 0;
+}
+
+.others-row input[type="text"] {
+  width: 160px;
+  height: 24px;
+  border: 1px solid #999;
+  padding: 2px 4px;
+  font-size: 13px;
+}
+
+
+.section-gap { height: 20px; }
+
+
+.qual-row {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.qual-label {
+  width: 140px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.qual-table-wrapper { flex: 1; }
+
+.qual-table {
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.qual-table th {
+  font-weight: bold;
+  padding: 4px 10px;
+  text-align: left;
+  border-bottom: 1px solid #aaa;
+}
+
+.qual-table td {
+  padding: 4px 6px;
+}
+
+.qual-table td:first-child {
+  padding-right: 10px;
+  text-align: center;
+}
+
+.qual-table td:nth-child(2) {
+  min-width: 80px;
+}
+
+.qual-table input[type="text"] {
+  height: 20px;
+  border: 1px solid #999;
+  padding: 1px 4px;
+  font-size: 12px;
+}
+
+.qual-table .board-input { width: 110px; }
+.qual-table .pct-input   { width: 90px; }
+.qual-table .year-input  { width: 80px; }
+
+.qual-hint {
+  font-size: 11px;
+  color: #444;
+  margin-top: 3px;
+  padding-left: 6px;
+}
+
+.qual-hints-row {
+  display: flex;
+  gap: 100px;
+  padding-left: 102px;
+}
+
+
+.courses-row {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.courses-label {
+  width: 140px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.courses-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.courses-group label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+
+.btn-row {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.btn-row input[type="submit"],
+.btn-row input[type="reset"] {
+  padding: 4px 14px;
+  font-size: 13px;
+  margin: 0 4px;
+  cursor: pointer;
+  border: 1px solid #888;
+  background: #e8e8e8;
+}
+
+.btn-row button {
+  padding: 4px 14px;
+  font-size: 13px;
+  margin: 0 4px;
+  cursor: pointer;
+  border: 1px solid #888;
+  background: #e8e8e8;
+}
+
+.btn-row input[type="submit"]:hover { background: #d0d0d0; }
+.btn-row input[type="reset"]:hover  { background: #d0d0d0; }
+.btn-row button:hover { background: #d0d0d0; }
+
+.status-message {
+  min-height: 20px;
+  margin: 16px 0 8px;
+  font-weight: bold;
+}
+
+.status-message.success {
+  color: #166534;
+}
+
+.status-message.error {
+  color: #b91c1c;
+}
+
+.error-list {
+  margin: 0 0 14px 170px;
+  color: #b91c1c;
+  padding-left: 18px;
+}
+
+
+.restaurant-wrapper {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.restaurant-box {
+  background: #add8e6;
+  border: 1px solid #7ab5c9;
+  padding: 18px 22px;
+}
+
+.restaurant-box h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.restaurant-box .intro-text {
+  font-size: 13.5px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.restaurant-box nav {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.restaurant-box nav a {
+  font-size: 13.5px;
+  color: #0000cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.restaurant-box nav a:hover { color: #0000aa; }
+
+.restaurant-box .body-text {
+  font-size: 13.5px;
+  color: #111;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 14px;
+  }
+
+  .form-wrapper,
+  .restaurant-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .form-wrapper {
+    padding: 18px;
+  }
+
+  .form-row,
+  .qual-row,
+  .courses-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .form-row label,
+  .qual-label,
+  .courses-label {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .form-row input[type="text"],
+  .form-row input[type="email"],
+  .form-row input[type="tel"],
+  .form-row textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dob-group {
+    flex-wrap: wrap;
+  }
+
+  .qual-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .qual-hints-row {
+    gap: 16px;
+    padding-left: 6px;
+    flex-wrap: wrap;
+  }
+}
