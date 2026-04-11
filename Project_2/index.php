@@ -15,6 +15,27 @@ $months = array(
     '11' => 'November',
     '12' => 'December'
 );
+
+  $status = isset($_GET['status']) ? $_GET['status'] : '';
+  $statusMessage = '';
+  $statusClass = '';
+
+  if ($status === 'success') {
+    $statusMessage = 'Student registration submitted successfully.';
+    $statusClass = 'success';
+  } elseif ($status === 'invalid_request') {
+    $statusMessage = 'Invalid request. Please submit using the form.';
+    $statusClass = 'error';
+  } elseif ($status === 'missing_fields') {
+    $statusMessage = 'Please fill all required fields before submitting.';
+    $statusClass = 'error';
+  } elseif ($status === 'invalid_dob') {
+    $statusMessage = 'Date of birth is invalid.';
+    $statusClass = 'error';
+  } elseif ($status === 'db_error') {
+    $statusMessage = 'Could not save data to database. Please try again.';
+    $statusClass = 'error';
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +49,11 @@ $months = array(
   <main class="page-shell">
     <section class="form-wrapper">
       <h1 class="form-title">Student Registration Form</h1>
+      <?php if ($statusMessage !== ''): ?>
+        <p class="status-message <?php echo $statusClass; ?>"><?php echo htmlspecialchars($statusMessage); ?></p>
+      <?php endif; ?>
 
-      <form action="insert.php" method="post">
+      <form action="submit.php" method="post">
         <div class="form-row">
           <label for="firstName">First Name</label>
           <div class="field"><input type="text" id="firstName" name="firstName" required /></div>
