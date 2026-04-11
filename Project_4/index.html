@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Currency Converter App</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<main class="app-card">
+		<h1>Currency Converter APP</h1>
+
+		<form id="converterForm" novalidate>
+			<div class="form-row">
+				<label for="amount">Enter Amount IN<br />FRW</label>
+				<input type="number" id="amount" min="0" step="0.01" required />
+			</div>
+
+			<div class="form-row">
+				<label for="currency">Select Currency</label>
+				<select id="currency" required>
+					<option value=""> </option>
+					<option value="USD">USD</option>
+					<option value="EUR">EURO</option>
+					<option value="GBP">GBP</option>
+					<option value="KES">KES</option>
+				</select>
+			</div>
+
+			<div class="form-row">
+				<label for="rate">Rate</label>
+				<input type="number" id="rate" min="0" step="0.0001" required />
+			</div>
+
+			<button type="submit">CONVERT</button>
+		</form>
+
+		<section class="result-box">
+			<h2>Result</h2>
+			<p id="resultText">Result Here ....</p>
+		</section>
+	</main>
+
+	<script src="main.js"></script>
+</body>
+</html>
