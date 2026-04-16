@@ -1,0 +1,12 @@
+# Master PHP Guide
+MASTER_PHP.md
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Readme
+MASTER_PHP.md
