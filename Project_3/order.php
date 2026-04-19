@@ -5,6 +5,20 @@ $pageTitle = 'Order';
 $activePage = 'order';
 $statusMessage = '';
 $statusClass = '';
+$selectedMenuItem = isset($_GET['menu_item']) ? trim($_GET['menu_item']) : '';
+
+$menuOptions = array(
+    'Grilled Tilapia',
+    'Fried Fish',
+    'Fish Curry',
+    'Soda',
+    'Mango Juice',
+    'Passion Juice'
+);
+
+if (!in_array($selectedMenuItem, $menuOptions, true)) {
+    $selectedMenuItem = '';
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fullName = trim(isset($_POST['full_name']) ? $_POST['full_name'] : '');
@@ -17,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($fullName === '' || $email === '' || $phone === '' || $menuItem === '' || $address === '' || $orderDate === '') {
         $statusMessage = 'Please fill in all required fields.';
         $statusClass = 'error';
+        $selectedMenuItem = $menuItem;
     } else {
         $connection = getDbConnection();
         $sql = 'INSERT INTO food_orders (full_name, email, phone, menu_item, address, order_date) VALUES (?, ?, ?, ?, ?, ?)';
@@ -30,13 +45,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($saved) {
                 $statusMessage = 'Order placed successfully. Thank you!';
                 $statusClass = 'success';
+                $selectedMenuItem = '';
             } else {
                 $statusMessage = 'Could not save order. Please try again.';
                 $statusClass = 'error';
+                $selectedMenuItem = $menuItem;
             }
         } else {
             $statusMessage = 'Could not prepare database request.';
             $statusClass = 'error';
+            $selectedMenuItem = $menuItem;
         }
 
         mysqli_close($connection);
@@ -64,13 +82,12 @@ include 'header.php';
             <div class="form-field">
                 <label for="menu_item">Select Menu</label>
                 <select id="menu_item" name="menu_item" required>
-                    <option value="">Choose menu item</option>
-                    <option value="Grilled Tilapia">Grilled Tilapia</option>
-                    <option value="Fried Fish">Fried Fish</option>
-                    <option value="Fish Curry">Fish Curry</option>
-                    <option value="Soda">Soda</option>
-                    <option value="Mango Juice">Mango Juice</option>
-                    <option value="Passion Juice">Passion Juice</option>
+                    <option value="" <?php echo $selectedMenuItem === '' ? 'selected' : ''; ?>>Choose menu item</option>
+                    <?php foreach ($menuOptions as $option): ?>
+                        <option value="<?php echo htmlspecialchars($option); ?>" <?php echo $selectedMenuItem === $option ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($option); ?>
+                        </option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-field form-span-2">

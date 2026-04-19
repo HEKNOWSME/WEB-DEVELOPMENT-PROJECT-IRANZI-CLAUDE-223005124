@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS hotel_portal;
+USE hotel_portal;
+
+CREATE TABLE IF NOT EXISTS admins (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS food_orders (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(120) NOT NULL,
+    email VARCHAR(120) NOT NULL,
+    phone VARCHAR(40) NOT NULL,
+    menu_item VARCHAR(120) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    order_date DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS contact_messages (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(120) NOT NULL,
+    email VARCHAR(120) NOT NULL,
+    phone VARCHAR(40) NOT NULL,
+    location VARCHAR(120) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO admins (username, password)
+SELECT 'admin', 'admin123'
+WHERE NOT EXISTS (
+    SELECT 1 FROM admins WHERE username = 'admin'
+);

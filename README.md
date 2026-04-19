@@ -14,12 +14,12 @@ The repository demonstrates front-end layout work, client-side JavaScript logic,
 
 ## Project Overview
 
-| Project | Focus Area | Folder |
-|---|---|---|
-| Project 1 | Static website layout and page structure | `Project_1/` |
-| Project 2 | Student registration form with PHP and MySQL | `Project_2/` |
+| Project   | Focus Area                                      | Folder       |
+| --------- | ----------------------------------------------- | ------------ |
+| Project 1 | Static website layout and page structure        | `Project_1/` |
+| Project 2 | Student registration form with PHP and MySQL    | `Project_2/` |
 | Project 3 | Multi-page hotel website with admin login and data storage | `Project_3/` |
-| Project 4 | Currency converter using JavaScript | `Project_4/` |
+| Project 4 | Currency converter using JavaScript             | `Project_4/` |
 
 ## Technology Stack
 
@@ -93,6 +93,7 @@ Then open:
 **Highlights:**
 
 - Multi-page hotel and restaurant website
+- Gallery with six local food and drink images that prefill the order form
 - Order form and contact form persisted to MySQL
 - Admin authentication and protected orders page
 - Shared header/footer architecture
@@ -101,12 +102,14 @@ Then open:
 
 - `Project_3/index.php`
 - `Project_3/menu.php`
+- `Project_3/gallery.php`
 - `Project_3/order.php`
 - `Project_3/contact.php`
 - `Project_3/login.php`
 - `Project_3/orders.php`
 - `Project_3/auth.php`
 - `Project_3/config.php`
+- `Project_3/database.sql`
 
 ### Project 4: Currency Converter App
 
@@ -127,15 +130,16 @@ Then open:
 
 ## Database Setup
 
-### Project 2
+### Project 2 Screenshots
 
 - Database name: `student_portal`
 - Configure credentials in `Project_2/config.php`
 
-### Project 3
+### Project 3 Screenshots
 
 - Database name: `hotel_portal`
 - Configure credentials in `Project_3/config.php`
+- Import `Project_3/database.sql` to create the required tables and default admin user
 - Required tables used by the code:
   - `admins`
   - `food_orders`
@@ -175,9 +179,9 @@ Menu page using an HTML table to present food and drink items.
 
 ![Project 3 Menu](screenshoots/Project_3_Menu.png)
 
-Gallery page with food and drink images linked to the order page.
+Gallery page with six local food and drink images linked directly to the order form.
 
-![Project 3 Gallery](screenshoots/Project_3_Gallery.png)
+![Project 3 Gallery](screenshoots/image.png)
 
 Order form page that sends customer order details to the database using PHP.
 

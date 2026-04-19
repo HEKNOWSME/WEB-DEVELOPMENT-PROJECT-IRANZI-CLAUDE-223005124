@@ -1,8 +1,27 @@
 <?php
 require_once 'config.php';
 
+$allowedRedirects = array('order.php', 'orders.php');
+
+$redirectTarget = isset($_GET['redirect']) ? trim($_GET['redirect']) : '';
+if ($redirectTarget === '' && isset($_POST['redirect_target'])) {
+    $redirectTarget = trim($_POST['redirect_target']);
+}
+if (!in_array($redirectTarget, $allowedRedirects, true)) {
+    $redirectTarget = 'orders.php';
+}
+
+$selectedMenuItem = isset($_GET['menu_item']) ? trim($_GET['menu_item']) : '';
+if ($selectedMenuItem === '' && isset($_POST['selected_menu_item'])) {
+    $selectedMenuItem = trim($_POST['selected_menu_item']);
+}
+
 if (!empty($_SESSION['admin_logged_in'])) {
-    header('Location: orders.php');
+    $redirectUrl = $redirectTarget;
+    if ($selectedMenuItem !== '' && $redirectTarget === 'order.php') {
+        $redirectUrl .= '?menu_item=' . urlencode($selectedMenuItem);
+    }
+    header('Location: ' . $redirectUrl);
     exit;
 }
 
@@ -33,7 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($user && $password === $user['password']) {
                 $_SESSION['admin_logged_in'] = true;
                 $_SESSION['admin_username'] = $user['username'];
-                header('Location: orders.php');
+                $redirectUrl = $redirectTarget;
+                if ($selectedMenuItem !== '' && $redirectTarget === 'order.php') {
+                    $redirectUrl .= '?menu_item=' . urlencode($selectedMenuItem);
+                }
+                header('Location: ' . $redirectUrl);
                 exit;
             }
         }
@@ -51,6 +74,8 @@ include 'header.php';
     <div class="panel login-panel">
         <p class="section-subtitle">Login to view customer order information.</p>
         <form action="login.php" method="post" class="form-grid-large">
+            <input type="hidden" name="redirect_target" value="<?php echo htmlspecialchars($redirectTarget); ?>" />
+            <input type="hidden" name="selected_menu_item" value="<?php echo htmlspecialchars($selectedMenuItem); ?>" />
             <div class="form-field form-span-2">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required />
